@@ -1,0 +1,6 @@
+11:06 2016/10/19  解决 /?s=/home/user/verify 访问可以   /home/user/verify 无法访问
+
+thinkphp URL模块 配置为 'URL_MODEL'     =>  '2',
+
+
+url http://www.cnphp6.com/archives/122368
