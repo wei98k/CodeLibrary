@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>适合移动手机使用的js环形菜单特效插件|DEMO2_jQuery之家-自由分享jQuery、html5、css3的插件库</title>
+	<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+	<link rel="stylesheet" type="text/css" href="css/default.css">
+	<script src='js/blooming-menu.min.js'></script>
+	<style>
+    html {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    body .blooming-menu__container {
+      left: 50px;
+      bottom: 0px;
+      top: auto;
+      position: absolute;
+    }
+
+    .blooming-menu__item:nth-of-type(1) .blooming-menu__item-btn {
+      background-image: url(img/get-app.svg);
+      background-size: 35%;
+    }
+
+    .blooming-menu__item:nth-of-type(2) .blooming-menu__item-btn {
+      background-image: url(img/grade.svg);
+    }
+
+    .blooming-menu__item:nth-of-type(3) .blooming-menu__item-btn {
+      background-image: url(img/home.svg);
+    }
+
+    .blooming-menu__item:nth-of-type(4) .blooming-menu__item-btn {
+      background-image: url(img/lock.svg);
+      background-size: 35%;
+    }
+
+    .blooming-menu__item-btn:hover {
+      box-shadow: 0 8px 17px 0 rgba(0,0,0,.2);
+      opacity: 1;
+    }
+  </style>
+	<!--[if IE]>
+		<script src="http://libs.useso.com/js/html5shiv/3.7/html5shiv.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+	<div class="htmleaf-container">
+		<header class="htmleaf-header">
+			<h1>适合移动手机使用的js环形菜单特效插件 <span>A configurable and animated radial menu</span></h1>
+			<div class="htmleaf-links">
+				<a class="htmleaf-icon icon-htmleaf-home-outline" href="http://www.htmleaf.com/" title="jQuery之家" target="_blank"><span> jQuery之家</span></a>
+				<a class="htmleaf-icon icon-htmleaf-arrow-forward-outline" href="http://www.htmleaf.com/jQuery/Menu-Navigation/201506081991.html" title="返回下载页" target="_blank"><span> 返回下载页</span></a>
+			</div>
+			<div class="htmleaf-demo center">
+			  <a href="index.html">DEMO1</a>
+			  <a href="index2.html" class="current">DEMO2</a>
+			</div>
+		</header>
+		<div class="htmleaf-content bgcolor-3">
+			<script>
+			    var bloomingMenu = new BloomingMenu({
+			      startAngle: -90,
+			      endAngle: 0,
+			      radius: 100,
+			      itemsNum: 4,
+			      itemAnimationDelay: 0.08
+			    })
+			    bloomingMenu.render()
+
+			    // Prevents "elastic scrolling" on Safari
+			    document.addEventListener('touchmove', function(event) {
+			      'use strict'
+			      event.preventDefault()
+			    })
+			</script>
+		</div>
+	</div>
+	
+</body>
+</html>
