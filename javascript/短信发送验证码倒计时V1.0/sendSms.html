@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand" />
+    <title>短信发送倒计时</title>
+    <script src="http://apps.bdimg.com/libs/jquery/1.7.2/jquery.js"></script>
+    <style>
+        /**** send SMS style ****/
+        .send-sms {
+            border:none;
+            border: 1px solid #ccc;
+            width: 90px;
+            height: 35px;
+            background-color: #47B34D;
+            color: #FFFFFF;
+            cursor: pointer;
+        }
+        .sms-disabled {
+            background-color: #B6B6B6;
+        }
+        /**** send SMS style ****/
+    </style>
+</head>
+<body>
+
+<!-- 需要引入HTML结构 start -->
+<input type="button" class="ks-control send-sms" id="send-sms" value="获取验证码" />
+<!-- 需要引入HTML结构 end -->
+
+
+<script>
+$(function(){
+
+    //SMS发送
+    $("#send-sms").click(function(){
+        var obj = this;
+        var i   = 60;
+        $(obj).attr('disabled','true');
+        $(obj).addClass('sms-disabled');
+        sendSms(i, obj);
+        //TODO: 调用ajax发送SMS
+        
+    });
+
+});
+/**
+ * 倒计时
+ * @author 鬼谷子 <majianwei168@outlook.com>
+ * @datetime 2017-03-15T15:58:48+0800
+ * @param    {int}                 second 秒数
+ * @param    {obj}                 obj    需要操作的节点对象
+ * @return                          
+ */
+function sendSms(second, obj)
+{
+    var t;
+    o = obj;
+    i = second - 1;
+    $(o).val(i);
+    if(i > 0) {
+        t = setTimeout("sendSms(i,o)", 1000);
+    } else {
+        clearTimeout(t);
+        $(o).val('获取验证码');
+        $(o).removeClass('sms-disabled');
+        $(o).removeAttr('disabled');
+    }
+}
+</script>
+</body>
+</html>
