@@ -20,6 +20,9 @@
     <style>
         
     /**** 日志区域 带时间轴 */
+        ul,li{
+            list-style: none;
+        }
         .log-div {
             position:relative;
             padding-left: 20px;
@@ -30,9 +33,6 @@
             margin-right: 10px;
             border-bottom:1px solid #EEEEEE;
             margin-bottom: 10px;
-        }
-        .log-div .log-bestnew {
-            color: #4cd964;
         }
         .log-div .log-timeline {
             position: absolute;
@@ -51,7 +51,10 @@
             background-repeat: no-repeat;
             background-position: center;
         }
-        .log-div .log-bestnew .log-node {
+        .log-div li:nth-child(2) {
+            color: #4cd964;
+        }
+        .log-div li:nth-child(2) .log-node {
             background-image: url(./images/first_time_axis_green.jpg);
             background-size: 70%;
         }
@@ -65,31 +68,42 @@
                 <span class="ksicon icon-history"></span>
                 <span>订单日志</span>
             </div>
-            <div class="log-div">
+            <ul class="log-div">
                 <div class="log-timeline"></div>
-                <div class="log-list log-bestnew">
-                    <span class="log-node"></span>
-                    <div class="log-title">提交订单</div>
-                    <div class="log-time">2017-03-17 12:30</div>
-                </div>
-                <div class="log-list ">
-                    <span class="log-node"></span>
-                    <div class="log-title">提交订单</div>
-                    <div class="log-time">2017-03-17 12:30</div>
-                </div>
-                <div class="log-list ">
-                    <span class="log-node"></span>
-                    <div class="log-title">提交订单</div>
-                    <div class="log-title">提交订单</div>
-                    <div class="log-title">提交订单</div>
-                    <div class="log-time">2017-03-17 12:30</div>
-                </div>
-                <div class="log-list ">
-                    <span class="log-node"></span>
-                    <div class="log-title">提交订单</div>
-                    <div class="log-time">2017-03-17 12:30</div>
-                </div>
-            </div>
+                <li>
+                    <div class="log-list log-bestnew">
+                        <span class="log-node"></span>
+                        <div class="log-title">提交订单</div>
+                        <div class="log-time">2017-03-17 12:30</div>
+                    </div>
+                </li>
+                
+                <li>
+                    <div class="log-list ">
+                        <span class="log-node"></span>
+                        <div class="log-title">提交订单</div>
+                        <div class="log-time">2017-03-17 12:30</div>
+                    </div>
+                </li>
+
+                <li>
+                    <div class="log-list ">
+                        <span class="log-node"></span>
+                        <div class="log-title">提交订单</div>
+                        <div class="log-title">提交订单</div>
+                        <div class="log-title">提交订单</div>
+                        <div class="log-time">2017-03-17 12:30</div>
+                    </div>
+                </li>
+
+                <li>
+                    <div class="log-list ">
+                        <span class="log-node"></span>
+                        <div class="log-title">提交订单</div>
+                        <div class="log-time">2017-03-17 12:30</div>
+                    </div>
+                </li>
+            </ul>
 
         </div>
 
