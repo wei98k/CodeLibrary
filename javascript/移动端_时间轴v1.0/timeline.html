@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<!-- 
+    author:鬼谷子
+    email :<majianwei168@outlook.com>
+    版本  : v1.0.20170317
+
+    TODO:
+    把线改成H5 canvas 接口的线画出来 
+ -->
+<head>
+    <meta charset="UTF-8">
+    <title>时间轴-组件</title>
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <script src="http://apps.bdimg.com/libs/jquery/1.7.2/jquery.js"></script>
+
+    <style>
+        
+    /**** 日志区域 带时间轴 */
+        .log-div {
+            position:relative;
+            padding-left: 20px;
+            padding-right: 10px;
+        }
+        .log-div .log-list {
+            margin-left: 10px;
+            margin-right: 10px;
+            border-bottom:1px solid #EEEEEE;
+            margin-bottom: 10px;
+        }
+        .log-div .log-bestnew {
+            color: #4cd964;
+        }
+        .log-div .log-timeline {
+            position: absolute;
+            margin-left: -8px;
+            height: 65px;
+            border-left: 1px solid #DDDDDD;
+            margin-top: 4px;
+        }
+        .log-div .log-node {
+            width: 26px;
+            height: 26px;
+            display: block;
+            position: absolute;
+            margin-left: -31px;
+            background-image: url(./images/time_axis.jpg);
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        .log-div .log-bestnew .log-node {
+            background-image: url(./images/first_time_axis_green.jpg);
+            background-size: 70%;
+        }
+    </style>
+
+</head>
+<body>
+        <!-- 主体区域 HTML结构  -->
+        <div class="org-list mui-card">
+            <div class="org-title mui-card-header">
+                <span class="ksicon icon-history"></span>
+                <span>订单日志</span>
+            </div>
+            <div class="log-div">
+                <div class="log-timeline"></div>
+                <div class="log-list log-bestnew">
+                    <span class="log-node"></span>
+                    <div class="log-title">提交订单</div>
+                    <div class="log-time">2017-03-17 12:30</div>
+                </div>
+                <div class="log-list ">
+                    <span class="log-node"></span>
+                    <div class="log-title">提交订单</div>
+                    <div class="log-time">2017-03-17 12:30</div>
+                </div>
+                <div class="log-list ">
+                    <span class="log-node"></span>
+                    <div class="log-title">提交订单</div>
+                    <div class="log-title">提交订单</div>
+                    <div class="log-title">提交订单</div>
+                    <div class="log-time">2017-03-17 12:30</div>
+                </div>
+                <div class="log-list ">
+                    <span class="log-node"></span>
+                    <div class="log-title">提交订单</div>
+                    <div class="log-time">2017-03-17 12:30</div>
+                </div>
+            </div>
+
+        </div>
+
+
+<script>
+    $(function(){
+        var logHeight = $(".log-div").height() - 30;
+        $(".log-timeline").css('height', logHeight);
+    });
+</script>
+
+</body>
+</html>
