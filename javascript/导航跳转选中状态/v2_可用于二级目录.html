@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>导航链接跳转v2</title>
+</head>
+<body>
+<!-- ============= 说明
+工具及版本信息
+thinkphp 3.2.3
+jquery-1.7.2
+-->
+<ul id="ks-merchant-left-nav">
+    <li>
+        <a class="ks-parent-title" href="{:U('UserMerchant/orderRobBulk')}"><i class="ks-icon-img ks-icon-rob"></i> 我要抢单</a>
+    </li>
+    <li>
+        <a class="ks-parent-title" href="{:U('UserMerchant/orderBulk')}"><i class="ks-icon-img ks-icon-myorder"></i> 我的订单</a>
+    </li>
+    <li class="ks-parent-title ks-sub-ul">
+        <a href=""><i class="ks-icon-img ks-icon-mycenter"></i> 个人中心</a>
+        <ul>
+            <li class="ks-sub-title"><a href="{:U('UserMerchant/profile')}">个人资料</a></li>
+            <li class="ks-sub-title"><a href="">账户余额</a></li>
+            <li class="ks-sub-title"><a href="{:U('UserMerchant/qualific')}">加盟商资质变更</a></li>
+        </ul>
+    </li>
+</ul>
+<script type="text/javascript">
+$(document).ready(function(){
+    var current = "__SELF__";
+    var url     = '';
+    //二级目录 跳转选定
+    $('#ks-merchant-left-nav a').each(function(){
+        url = $(this).attr('href');
+        if(url == current) {
+            if($(this).attr('class') == 'ks-parent-title') {
+                $(this).addClass('ks-title-selected');
+            } else {
+                $(this).parentsUntil('.ks-parent-title').parent().children('a').addClass('ks-title-selected');
+                $(this).parent().addClass('ks-sub-selected');
+            }
+        }
+    });
+});
+</script>
+    
+</body>
+</html>

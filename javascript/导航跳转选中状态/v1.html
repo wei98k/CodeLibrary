@@ -1,0 +1,41 @@
+<script>
+/**
+*功能：实现页面跳转后当前页面和对应导航栏目样式显示
+*js 与 JQ 结合 
+*思路： 1、利用JS获取当前链接地址
+*       2、分割URL地址
+*       3、取出域名之后的URL部分
+*       4、利用JQ遍历出a下面的所有href值
+*       5、判断当前URL部分与遍历出的href值 如果匹配成功则为当前的a加上
+*/
+    $(document).ready(function(){
+
+    thisURL = document.location.href;
+    var strs = new Array();
+    var strs = thisURL.split("/");
+    //console.log(strs.pop());
+
+    var dqurl = (strs.pop());
+    //alert(typeof(dqurl));
+    if(dqurl == ''){
+        $(".nav_list li a").each(function(){
+            if($(this).attr('href') == 'index.php' ){
+                $(this).addClass("selected2");
+            }
+        });
+    }else{  
+        $(".nav_list li a").each(function(){ //遍历当前元素
+            console.log($(this).attr('href'));
+            
+            if($(this).attr('href') == dqurl ){
+                $(this).addClass("selected2");
+            }
+        });
+    }
+        //console.log($(".nav_list li").children());
+        //console.log($(".nav_list").children().attr("href"));
+        //console.log($(".nav_list .drop-menu-effect").html());
+        //alert(".nav_list a")
+    });
+    //console.log(strs);
+</script>
