@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>zepto手机端固定层图标导航菜单 - 站长素材</title>
+<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+
+</head>
+<html>
+<body>
+
+<div style="height:1000px;"></div>
+
+<div class="wrap">
+	<div class="menu"><img class="icon_menu" src="img/menu.png" /><span></span></div>
+	<div class="btn btn1" data-num="1"><span>照相</span></div>
+	<div class="btn btn2" data-num="2"><span>位置</span></div>
+	<div class="btn btn3" data-num="3"><span>音乐</span></div>
+	<div class="btn btn4" data-num="4"><span>聊天</span></div>
+</div>
+
+<script type="text/javascript" src="js/zepto.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	$(".menu").click(function(){
+		var span = $(this).find("span");
+		if(span.hasClass("open")){
+			span.removeClass("open").addClass("close");
+			$(".btn").removeClass("open").addClass("close");
+		}else{
+			span.removeClass("close").addClass("open");
+			$(".btn").removeClass("close").addClass("open");
+		}
+	});
+});
+</script>
+<div style="text-align:center;margin:50px 0; font:normal 14px/24px 'MicroSoft YaHei';">
+<p>适用浏览器：IE8、360、FireFox、Chrome、Safari、Opera、傲游、搜狗、世界之窗. </p>
+<p>来源：<a href="http://sc.chinaz.com/" target="_blank">站长素材</a></p>
+</div>
+</body>
+</html>
