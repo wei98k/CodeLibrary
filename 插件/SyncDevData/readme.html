@@ -1,0 +1,34 @@
+<div style="width:500px;margin:0 auto;">
+<h3 align="center">开发系统数据同步到远程数据库 v0.1</h3>
+<p align="left">
+    <b>插件信息</b>
+    <p>
+        开发时间：2017-02-17<br>
+        插件主要同步onethink_v1.0的 meun、action、categroy、config 表
+    </p>
+
+    <b>使用方法</b><br>
+    新建钩子名称： SyncDevData <br>
+    钩子类型：     控制器<br><br>
+
+    <b>在插件管理中 安装 同步开发系统数据</b><br>
+    点开设置：<br>
+    修改对应的远程数据库配置信息<br><br>
+
+    <b>使用例子：</b><br>
+    <textarea name="" id="" cols="100" rows="15">
+    public function DevSync($execu=0)
+    {
+        if( $execu ) {
+            hook('syncDevData');
+        } else {
+            $url = U('DataManage/DevSync', array('execu'=>1));
+            echo '<h1><a target="_blank" href="'. $url .'"><input type="button" value="执行"></a></h1>';
+            echo '<h1><a href="javascript:history.go(-1)"><input type="button" value="返回"></a></h1>';
+        }
+    }
+    </textarea>
+    <p>插件疑问及交流群: 224546966 </p>
+    <p>git地址： https://git.oschina.net/mjw/onethinkPlug </p>
+</p>
+</div>
